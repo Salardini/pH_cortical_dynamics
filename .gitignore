@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Raw EEG data (too large for git — use OpenNeuro)
+*.set
+*.fdt
+*.edf
+*.vhdr
+*.eeg
+*.vmrk
+*.fif
+
+# Large intermediates
+*.npy
+*.pkl
