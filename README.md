@@ -44,6 +44,8 @@ pH_cortical_dynamics/
 ├── .gitignore
 │
 ├── code/
+│   ├── toymodel/
+│   │   └── ph_ei_toymodel.py            # E-I circuit port-Hamiltonian simulation
 │   ├── discovery/
 │   │   └── rho_analysis.py              # Main analysis: ds004504 (eyes-closed)
 │   ├── preclinical/
