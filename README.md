@@ -24,11 +24,13 @@ We apply port-Hamiltonian systems theory to model cortical dynamics measured by 
 
 2. **Toy model validation**: A biologically realistic E-I circuit model confirms near-perfect mapping between ρ and dissipation (r = −0.998).
 
-3. **Discovery cohort** (ds004504, Greece): AD patients show flattened dorsoventral ρ gradient compared to controls (alpha band: Cohen's d = 1.175, p < 0.0001), with gradient tracking cognitive severity (ρₛ = −0.434, p < 0.0001 vs MMSE across the full sample).
+3. **Discovery cohort** (ds004504, Greece, N=88): AD patients show flattened dorsoventral ρ gradient compared to controls (alpha band: Cohen's d = 1.175, p < 0.0001). Healthy controls replicate the MEG frequency-specific gradient: alpha/beta ventral-dominant, theta dorsal-dominant.
 
 4. **Cross-condition replication** (ds006036, same subjects, eyes-open photic stimulation): Effect attenuates but persists (alpha d = 0.610, p = 0.019), with beta remaining stable (d = 0.807).
 
-5. **Preclinical validation** (ds007427, Colombia): Presymptomatic PSEN1 E280A carriers vs non-carrier family members from the world's largest autosomal dominant AD kindred.
+5. **Dose-response**: DV gradient tracks cognitive severity across the full sample (ρₛ = −0.434, p < 0.0001 vs MMSE). Effect is between-group (AD vs controls) rather than within-group.
+
+6. **Preclinical validation** (ds007427, Colombia, N=43): Presymptomatic PSEN1 E280A carriers show globally elevated delta-band ρ (d = 0.92, p = 0.006) compared to non-carrier family members, with trending reductions in beta/broadband ρ (d ≈ −0.58, p ≈ 0.06). The DV gradient is intact in both groups — gradient disruption emerges only with clinical disease, while global dissipative imbalance precedes it by ~15–20 years.
 
 ---
 
@@ -39,38 +41,38 @@ pH_cortical_dynamics/
 ├── README.md
 ├── LICENSE
 ├── requirements.txt
+├── .gitignore
 │
 ├── code/
 │   ├── discovery/
-│   │   ├── rho_analysis.py          # Main analysis: ds004504 (eyes-closed)
-│   │   └── rho_analysis_eo.py       # Cross-condition: ds006036 (eyes-open)
+│   │   └── rho_analysis.py              # Main analysis: ds004504 (eyes-closed)
 │   ├── preclinical/
-│   │   └── rho_preclinical.py       # Preclinical validation: ds007427
+│   │   └── rho_preclinical.py           # Preclinical validation: ds007427
 │   └── plotting/
-│       ├── plot_results.py           # Discovery cohort figures
-│       └── dose_response.py          # MMSE dose-response figures
+│       ├── plot_results.py              # Discovery cohort figures
+│       └── dose_response.py             # MMSE dose-response figures
 │
 ├── data/
 │   ├── discovery_ds004504/
-│   │   └── rho_gradient_results.csv  # Computed ρ values, all subjects
+│   │   └── rho_gradient_results.csv     # Per-subject ρ values, all 88 subjects
 │   ├── preclinical_ds007427/
-│   │   └── rho_preclinical_results.csv  # (add after completion)
-│   └── README.md                     # Data provenance & access instructions
+│   │   └── preclinical_summary_stats.csv  # Summary statistics
+│   └── README.md                        # Data provenance & access instructions
 │
 ├── figures/
 │   ├── main/
-│   │   ├── Fig1_pH_ToyModel.png
-│   │   ├── dose_response_mmse.png
-│   │   └── ...
-│   ├── supplementary/
-│   │   └── ...
-│   └── README.md
+│   │   ├── Fig1_pH_ToyModel.png         # E-I toy model: ρ vs dissipation
+│   │   ├── dose_response_mmse.png/pdf   # MMSE dose-response
+│   │   └── Fig_preclinical_validation.png/pdf  # PSEN1 carrier results
+│   └── supplementary/
+│       ├── Fig_Validation_AR2.png       # AR(2) model validation
+│       └── eeg_rho_analysis.png         # EEG analysis overview
 │
 ├── manuscript/
 │   └── PNAS_PortHamiltonian_Draft.docx
 │
 └── notebooks/
-    └── rho_AD_analysis_colab.ipynb   # Google Colab notebook
+    └── rho_AD_analysis_colab.ipynb      # Google Colab notebook
 ```
 
 ---
